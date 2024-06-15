@@ -18,6 +18,7 @@ import Icon from "react-native-vector-icons/AntDesign"
 import { colors } from './src/utils/constants';
 import Input from "./src/components/input";
 import styles from './src/components/header/style';
+import Todo from './src/components/todo';
 
 
 
@@ -51,7 +52,7 @@ function App(){
       ) : (
            <ScrollView style={styles.ScrollView}>
              
-              <Text>todo dizisi dolu</Text>
+             { todos?.map((todo)=>(<Todo key={todo?.id} todo={todo}/>))}
             
            </ScrollView>
           )}

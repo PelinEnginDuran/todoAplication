@@ -3,14 +3,14 @@ import { colors } from "./constants";
 
 const generalStyles=StyleSheet.create({
     flex1:{
-        flex:1,
+        flex: 1,
         borderWidth:1
     },
     todosWrapper:{
         marginHorizontal:30,
         marginVertical:30,
-        flex:1,
-        borderWidth:1
+        flex: 1,
+  
     },
     emptyText:{
         textAlign:"center",
@@ -23,7 +23,7 @@ const generalStyles=StyleSheet.create({
         backgroundColor:colors.bgWhite
     },
     ScrollView:{
-        flex:"grow"
+        flex: 1
     }
         
 })
