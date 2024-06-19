@@ -5,6 +5,7 @@ export const colors={
     bgWhite:"#fff",
     bgBlack:"#0C0C0C",
     kiremit:"#F2613F",
-    danger:"#B31312"
+    danger:"#B31312",
+    flue:"#0000004d"
 
 }
