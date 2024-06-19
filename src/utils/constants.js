@@ -4,6 +4,7 @@ export const colors={
     textSecondry:"#1A2130",
     bgWhite:"#fff",
     bgBlack:"#0C0C0C",
-    kiremit:"#F2613F"
+    kiremit:"#F2613F",
+    danger:"#B31312"
 
 }
