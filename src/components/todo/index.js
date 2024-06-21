@@ -4,6 +4,7 @@ import styles from "./style";
 import Icon from "react-native-vector-icons/AntDesign";
 import { colors } from "../../utils/constants";
 import EditModal from "../editModal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Todo = ({ todo = {}, todos = [], setTodos = () => {} }) => {
   const [openModal,setOpenModal]=useState(false)
@@ -20,7 +21,12 @@ const Todo = ({ todo = {}, todos = [], setTodos = () => {} }) => {
         text: "OK",
         onPress: () => {
           const filteredTodos = todos.filter((item) => item.id !== todo.id);
-          setTodos(filteredTodos);
+          AsyncStorage.setItem("@todos", JSON.stringify(filteredTodos))
+          .then(()=>{
+            setTodos(filteredTodos);
+
+          })
+       
         },
         style: "destructive",
       },
@@ -47,7 +53,12 @@ const Todo = ({ todo = {}, todos = [], setTodos = () => {} }) => {
               tempArr.push(newToDo);
             }
           }
-          setTodos(tempArr);
+          AsyncStorage.setItem("@todos", JSON.stringify(tempArr))
+          .then(()=>{
+            setTodos(tempArr)
+
+          })
+        
         },
         style: "destructive",
       },
@@ -78,8 +89,13 @@ for(let i=0; i<todos.length; i++){
 
   }
 }
-    setTodos(tempArr)
+AsyncStorage.setItem("@todos", JSON.stringify(tempArr))
+.then(()=>{
+  setTodos(tempArr)
     setOpenModal(false)
+
+})
+    
   }
 
   return (
