@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../utils/constants";
-import Todo from ".";
+import Todo from "./index.js"
 
 const styles=StyleSheet.create({
     todoWrapper:{
@@ -13,10 +13,17 @@ const styles=StyleSheet.create({
 
 
     },
+  
     title:{
         fontWeight:"bold",
         color:colors.bgBlack,
         fontSize:25
+
+    },
+    completedTitle:{
+        color: colors.danger,
+        textDecorationLine: "line-through",
+     
 
     },
     date:{
